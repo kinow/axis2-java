@@ -65,7 +65,7 @@ write even a single line of code.</p>
 <h2>Client Side WS-Policy Support</h2>
 <p>This release <strong>fully supports WS Policy at
 client-side</strong>. It means that when you codegen a stub against
-a WSLD which contains policies, the stub will contain the
+a WSDL which contains policies, the stub will contain the
 capability to engage the required modules with the appropriate
 configurations, plus it will generate additional methods in the
 stub where the user can set certain properties. For instance, if
@@ -76,7 +76,7 @@ that the user can use to set properties in the generated stub.</p>
 <h3>How it works:</h3>
 <h4>Phase 1: At PolicyEvaluator</h4>
 <p>The Codegen engine runs a few of its registered extensions
-before it generates the stub. When the PolicyEvalutor (which is a
+before it generates the stub. When the PolicyEvaluator (which is a
 registered Codegen extension) is initialized, it populates a
 registry of QNames of supported policy assertions to
 PolicyExtensions.</p>
@@ -115,7 +115,7 @@ append &lt;username&gt;, &lt;passwd&gt; elements to the given
 element as children, which are later resolved into setUsername(..),
 setPasswd(..), functions of the stub. This way a module can include
 additional methods to the stub that can be used to get specific
-propreties from the user. These methods store any user input in the
+properties from the user. These methods store any user input in the
 ServiceClient properties
 (ServiceClient.getOptions().putProperty(...)) which can later be
 accessed by the module.</p>
@@ -149,9 +149,9 @@ MessageContext.</p>
 <p>In this current release, the Apache Axis2 framework uses the
 WS-Commons/Neethi framework to manipulate policy documents. All its
 description builders store the policy information included in
-description documents (services.xml, axis2.xml, .. etc) in the
+description documents (services.xml, axis2.xml, etc) in the
 appropriate description classes. This information is available at
-both deployment and run time via these description classes.</p>
+both deployment and runtime via these description classes.</p>
 <p>When generating WSDL dynamically for each service, policy
 information in the description classes is included. For instance,
 if you declare a policy in axis2.xml, then that policy is reflected
@@ -163,7 +163,7 @@ alternative is selected and set for each AxisOperation and
 AxisMessages of the AxisService. If the selected Policy alternative
 cannot be supported by any modules that are capable of processing
 the selective alternative, then the service is considered as a
-faulty service. Else, the set of modules is engaged at appropriate
+faulty service. Otherwise, the set of modules is engaged at appropriate
 levels to support the requirments and capabilities that are defined
 in the Policies associated with the AxisDescription.</p>
 <p>It is evident that there is some work left to make Apache Axis2
