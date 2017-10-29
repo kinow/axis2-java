@@ -1267,7 +1267,7 @@ public class MethodMarshallerUtils {
      * @throws IllegalAccessException
      * @throws InstantiationException
      * @throws NoSuchMethodException
-     * @parma marshalDesc is used to get cached information about the exception class and bean
+     * @param marshalDesc is used to get cached information about the exception class and bean
      */
     private static Exception createServiceException(String message,
                                                     Class exceptionclass,
